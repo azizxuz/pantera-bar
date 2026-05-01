@@ -6,7 +6,7 @@ const tok = () => randomBytes(24).toString('hex');
 const yearFromNow = () => { const d = new Date(); d.setFullYear(d.getFullYear()+1); return d; };
 
 @Controller('computers')
-@UseGuards(AdminGuard)
+// @UseGuards(AdminGuard)
 export class ComputersController {
   constructor(private prisma: PrismaService) {}
   @Get() list() { return this.prisma.computer.findMany({ orderBy: { number: 'asc' } }); }

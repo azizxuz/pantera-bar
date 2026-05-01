@@ -16,7 +16,9 @@ class CreateOrderDto {
 export class OrdersController {
   constructor(private prisma: PrismaService, private rt: RealtimeGateway) {}
 
-  @Post() @UseGuards(ComputerGuard)
+  @Post()
+  //  @UseGuards(ComputerGuard)
+
   async create(@Req() req: any, @Body() dto: CreateOrderDto) {
     const computer = req.computer;
     const products = await this.prisma.product.findMany({

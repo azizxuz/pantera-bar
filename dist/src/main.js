@@ -8,7 +8,7 @@ async function bootstrap() {
     await (0, seed_1.main)();
     const app = await core_1.NestFactory.create(app_module_1.AppModule);
     app.enableCors({
-        origin: ["http://localhost:5173", "http://localhost:8080"],
+        origin: true, // barcha domenlar
         credentials: true,
     });
     app.useGlobalPipes(new common_1.ValidationPipe({ whitelist: true, transform: true }));

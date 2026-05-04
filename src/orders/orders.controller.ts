@@ -22,7 +22,6 @@ class CreateOrderDto {
 export class OrdersController {
   constructor(private prisma: PrismaService, private rt: RealtimeGateway) {}
 
-  @Post()
   //  @UseGuards(ComputerGuard)
   @Post()
   async create(@Body() dto: CreateOrderDto) {
